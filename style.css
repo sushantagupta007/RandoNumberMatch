@@ -11,7 +11,7 @@ body {
 
 .half-width {
     height: 570px;
-    background: #222436;
+    background: rgba(63, 71, 218, 0.2);
     padding: 30px;
     text-align: center;
 }
