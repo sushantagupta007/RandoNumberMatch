@@ -1,7 +1,3 @@
-document.getElementById('ranndomNumberGenerate').addEventListener('click',function(){
-    getRandomNumber(); 
-})
-
 function  getPin (){
     const pin= Math.floor(Math.random()*10000);
     const pinString = pin+"";
@@ -18,24 +14,7 @@ function getRandomNumber(){
     return getPin(); 
 }
 
-
-
-document.getElementById('key-pad').addEventListener('click', function(event){
-    const previousNumber = document.getElementById('displayTypedNumber'); 
-   
-    const typedNumber = event.target.innerText; 
-    if(!isNaN(typedNumber)){
-        const newNumber = previousNumber.value+typedNumber; 
-        previousNumber.value = newNumber; 
-    }
-    if(isNaN(typedNumber)){
-        if(typedNumber=='C'){
-            previousNumber.value= "";
-        }
-    }
-})
-
-    let buttonClicked = 0;
+let buttonClicked = 0;
 function countTrace(){
     const countPlace= document.getElementById('count'); 
     let countValue = countPlace.innerText;
@@ -61,6 +40,25 @@ function play() {
     var audio = new Audio('/mixkit-arabian-mystery-harp-notification-2489.wav');
     audio.play();
   }
+
+document.getElementById('ranndomNumberGenerate').addEventListener('click',function(){
+    getRandomNumber(); 
+})
+
+document.getElementById('key-pad').addEventListener('click', function(event){
+    const previousNumber = document.getElementById('displayTypedNumber'); 
+   
+    const typedNumber = event.target.innerText; 
+    if(!isNaN(typedNumber)){
+        const newNumber = previousNumber.value+typedNumber; 
+        previousNumber.value = newNumber; 
+    }
+    if(isNaN(typedNumber)){
+        if(typedNumber=='C'){
+            previousNumber.value= "";
+        }
+    }
+})
 
 document.getElementById('submitBtn').addEventListener('click',function(){
     countTrace(); 
