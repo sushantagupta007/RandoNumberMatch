@@ -57,6 +57,10 @@ function countTrace(){
     }
 }
  
+function play() {
+    var audio = new Audio('/mixkit-arabian-mystery-harp-notification-2489.wav');
+    audio.play();
+  }
 
 document.getElementById('submitBtn').addEventListener('click',function(){
     countTrace(); 
@@ -68,7 +72,8 @@ document.getElementById('submitBtn').addEventListener('click',function(){
  
     
     if(typed==randomPin){
-        succcss.style.display="block";         
+        succcss.style.display="block";
+        play();          
     }
     if(typed!=randomPin){
         error.style.display="block"; 
