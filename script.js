@@ -30,7 +30,7 @@ function countTrace(isMatch){
 }
  
 function play() {
-    var audio = new Audio('./mixkit-arabian-mystery-harp-notification-2489.wav');
+    var audio = new Audio('mixkit-arabian-mystery-harp-notification-2489.wav');
     audio.play();
   }
 
