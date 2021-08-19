@@ -14,30 +14,23 @@ function getRandomNumber(){
     return getPin(); 
 }
 
-let buttonClicked = 0;
-function countTrace(){
+
+function countTrace(isMatch){
     const countPlace= document.getElementById('count'); 
     let countValue = countPlace.innerText;
-    buttonClicked++; 
-    if(buttonClicked==1){
-        countValue--; 
+    console.log(countValue)
+    if(isMatch==true){
+        countValue++;
         countPlace.innerText= countValue; 
     }
-    else if(buttonClicked==2){
-        countValue--; 
+    if(isMatch==false){
+        countValue--;
         countPlace.innerText= countValue; 
-    }
-    else if(buttonClicked==3){
-        countValue--; 
-        countPlace.innerText= countValue; 
-    }
-    if(countValue==0){
-        countPlace.innerText= 3;
     }
 }
  
 function play() {
-    var audio = new Audio('/mixkit-arabian-mystery-harp-notification-2489.wav');
+    var audio = new Audio('./mixkit-arabian-mystery-harp-notification-2489.wav');
     audio.play();
   }
 
@@ -61,7 +54,7 @@ document.getElementById('key-pad').addEventListener('click', function(event){
 })
 
 document.getElementById('submitBtn').addEventListener('click',function(){
-    countTrace(); 
+     
     const randomPin = document.getElementById('randomNumberDisplay').value;
     
     const succcss= document.getElementById('successNumber'); 
@@ -70,10 +63,13 @@ document.getElementById('submitBtn').addEventListener('click',function(){
  
     
     if(typed==randomPin){
+        play();
         succcss.style.display="block";
-        play();          
+        countTrace(true);
+                  
     }
     if(typed!=randomPin){
         error.style.display="block"; 
+        countTrace(false);
     }
 })
